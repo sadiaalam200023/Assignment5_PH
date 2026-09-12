@@ -8,7 +8,7 @@ const Herobanner = () => {
         
         <div>
             <div className="mb-4">
-          <h2 className="font-bold text-6xl">
+          <h2 className="font-bold text-5xl">
             Build Your Ideal
             <br />
             <span className="bg-gradient-to-r from-red-500 to-purple-500 bg-clip-text text-transparent">
@@ -16,12 +16,12 @@ const Herobanner = () => {
             </span>
           </h2>
           </div>
-
+        
           <p>
             Explore frontend, backend, database, and tooling options,
             compare them side by side, and put together the stack that fits
             your next project.
-          </p>
+          </p> 
 <div className="mt-3 flex gap-3">
           <button>Explore Technologies</button>
           <button>Learn more</button> </div>
