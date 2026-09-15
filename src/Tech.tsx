@@ -1,10 +1,10 @@
-import React from 'react';
+
 import type { Itech } from './techtype';
 
 interface TechProp{
     techPromise: Promise<Itech[]>
 }
-const Tech = ({techPromise}) => {
+const Tech = ({techPromise}: TechProp) => {
     return (
         <div>
            const tech = use(techPromise) 
