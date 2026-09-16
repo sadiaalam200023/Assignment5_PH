@@ -1,13 +1,20 @@
 
-import type { Itech } from './techtype';
+import { use } from "react";
+import type { Itech } from "./techtype";
+import Techavail from "./TechAvail";
 
-interface TechProp{
-    techPromise: Promise<Itech[]>
+
+interface TechProp {
+    techPromise: Promise<Itech[]>;
 }
-const Tech = ({techPromise}: TechProp) => {
+
+const Tech = ({ techPromise }: TechProp) => {
+
+    const tech = use(techPromise);
+
     return (
         <div>
-           const tech = use(techPromise) 
+           <Techavail tech = {tech}/>
         </div>
     );
 };
