@@ -1,13 +1,24 @@
 
-import type { Itech } from './techtype';
 
-const TechCard = ({tech} : {tech:Itech}) => {
+import type { Itech } from './techtype';
+interface TechavailProps {
+    tech: Itech;
+    isAdded: Itech[];
+    setIsAdded: React.Dispatch<React.SetStateAction<Itech[]>>;
+}
+const TechCard = ({
+     tech,
+    isAdded,
+    setIsAdded
+}: TechavailProps) => {
+
+     const alreadyAdded = isAdded.some(item => item.id === tech.id);
     return (
-        <div className="card w-80 bg-base-100">
+        <div className="card w-65 bg-base-100">
     <div className="card-body">
 
         
-        <div className="flex justify-between items-start">
+        <div className="flex items-start gap-10">
 
             <div>
                 <img
@@ -35,14 +46,14 @@ const TechCard = ({tech} : {tech:Itech}) => {
         
         <div className="flex justify-between items-center mt-4">
 
-            <span className="">
+            <span className="text-sm">
                 {tech.category}
             </span>
-             <span className="">
+             <span className="text-sm">
                 {tech.difficulty}
             </span>
 
-            <span>
+            <span className='text-sm'>
                 ⭐ {tech.rating}
             </span>
 
@@ -51,11 +62,21 @@ const TechCard = ({tech} : {tech:Itech}) => {
         </div>
 
        
-        <div className="flex justify-center mt-6">
-          <button className="btn btn-neutral">
-            Add to stack
-          </button>
-        </div>
+       <div className="flex justify-center mt-6">
+    <button
+        onClick={() => {
+            if (alreadyAdded) {
+                alert("This technology is already in your stack!");
+                return;
+            }
+
+            setIsAdded([...isAdded, tech]);
+        }}
+        className="btn btn-neutral w-full"
+    >
+        {alreadyAdded? "✓ Added to Stack" : "Add to Stack"}
+    </button>
+</div>
       </div>
     </div>
   );
