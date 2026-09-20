@@ -23,7 +23,7 @@ const Herobanner = () => {
             your next project.
           </p> 
 <div className="mt-3 flex gap-3">
-          <button>Explore Technologies</button>
+          <button className="btn bg-gradient-to-r from-red-500 to-purple-500">Explore Technologies</button>
           <button>Learn more</button> </div>
         </div>
 
