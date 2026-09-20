@@ -1,7 +1,7 @@
 import Nav from "./Nav";
 import Herobanner from "./Herobanner";
 import Footer from "./Footer";
-
+import { ToastContainer } from "react-toastify";
  import { Suspense } from "react";
  import Tech from "./Tech";
  import type { Itech } from "./techtype";
@@ -20,7 +20,9 @@ function App() {
   return (
     <>
     <Nav></Nav>
+    <ToastContainer />
     <Herobanner></Herobanner>
+     
     <Suspense
     fallback={
         <div className="flex justify-center items-center p-8">

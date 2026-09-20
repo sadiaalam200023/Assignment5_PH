@@ -1,5 +1,6 @@
 
 
+import { toast } from 'react-toastify';
 import type { Itech } from './techtype';
 interface TechavailProps {
     tech: Itech;
@@ -66,11 +67,12 @@ const TechCard = ({
     <button
         onClick={() => {
             if (alreadyAdded) {
-                alert("This technology is already in your stack!");
+                toast.warning("Already in your stack!");
                 return;
             }
 
             setIsAdded([...isAdded, tech]);
+            toast.success(`${tech.name} added to your stack!`)
         }}
         className="btn btn-neutral w-full"
     >

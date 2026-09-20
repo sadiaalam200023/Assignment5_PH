@@ -2,6 +2,7 @@ import React from 'react';
 
 
 import type { Itech } from "./techtype";
+import { toast } from 'react-toastify';
 
 interface SelectedTechProps {
     isAdded: Itech[];
@@ -59,6 +60,7 @@ const SelectedTech = ({
                 item => item.id !== tech.id
             )
         );
+        toast.info(`${tech.name} removed from your stack!`);
     }}
 >
     ✕
